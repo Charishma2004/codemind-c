@@ -1,18 +1,15 @@
-# include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int n,n1,rev=0,rem;
-    
-    //printf("enter any number:");
+    int rem,n,sum=0;
     scanf("%d",&n);
-    n1=n;
-    //logic
-    while (n>0)
+    while(n != 0)
     {
         rem=n%10;
-        rev=rev*10+rem;
+        sum=sum*10+rem;
         n=n/10;
     }
-    printf("%d",rev);
+    printf("%d",sum);
+    
     return 0;
 }

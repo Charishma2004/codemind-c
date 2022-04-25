@@ -5,12 +5,12 @@ int main()
     int nextterm=t1+t2;
     scanf("%d",&n);
     printf("%d %d",t1,t2);
-    for(i=3;i<=n;++i)
+    for(i=3;i<=n;i++)
     {
-        printf("% d",nextterm);
+        printf(" %d",nextterm);
         t1=t2;
         t2=nextterm;
-        nextterm =t1+t2;
+        nextterm=t1+t2;
     }
-  return 0;    
+    return 0;
 }

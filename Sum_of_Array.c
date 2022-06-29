@@ -1,16 +1,16 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[100],o=0,i;
+    int n;
     scanf("%d",&n);
+    int sum,i,a[n];
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
     for(i=0;i<n;i++)
     {
-     o=o+arr[i];
-    }    
-    
-    printf("%d",o);
+        sum=sum+a[i];
+    }
+    printf("%d",sum);
 }

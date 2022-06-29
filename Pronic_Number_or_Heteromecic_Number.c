@@ -1,27 +1,21 @@
 #include<stdio.h>
-int function(int n)
-{
-    int i,f=0;
-for(i=1;i<=n;i++)
-   {
-       if(i*(i+1)==n)
-       {
-           f=true;
-           break;
-       }
-   }
-   return f;
-}
 int main()
 {
-    int n,i;
+    int n,i=0,c=0;
     scanf("%d",&n);
-    if(function(n))
+    while(1)
     {
-        printf("YES");
-    }
-    else
-    {
-        printf("NO");
+        if(c==n)
+        {
+            printf("YES");
+            break;
+        }
+        else if(c>n)
+        {
+            printf("NO");
+            break;
+        }
+        c=i*(i+1);
+        i++;
     }
 }

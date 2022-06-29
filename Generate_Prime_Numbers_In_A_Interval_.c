@@ -1,10 +1,9 @@
 #include<stdio.h>
 int main()
 {
-    int n,m,p=0,c,i,j;
-    scanf("%d",&m);
-    scanf("%d",&n);
-    for(i=m;i<=n;i++)
+    int i,n,m,j,c=0;
+    scanf("%d%d",&n,&m);
+    for(i=n;i<=m;i++)
     {
         c=0;
         for(j=1;j<=i;j++)

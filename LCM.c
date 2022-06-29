@@ -1,25 +1,17 @@
- # include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int a,b;
-    //printf("enter two numbers
-");
-    scanf("%d",&a);
-    scanf("%d",&b);
-    
-    /*
-    *LCM is always greater than or equal to the-
-    *maximum of the given two numbers
-    */
-    int lcm=(a>b) ? a:b;
-    //loop untill divisible by both
-    while(1)
+    int min,n,m,lcm,i;
+    scanf("%d%d",&n,&m);
+    min=m>n?n:m;
+    for(i=min;;i+=min)
     {
-        if (lcm%a==0 && lcm%b==0)
-        break;
-        lcm++;
+        if(i%m==0 && i%n==0)
+        {
+            lcm=i;
+            break;
+        }
     }
-    //output the lcm
     printf("%d",lcm);
     return 0;
 }

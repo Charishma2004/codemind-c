@@ -1,52 +1,38 @@
 #include<stdio.h>
-int npal(int k)
-{
-    int r,s=0,d;
-    r=k;
-    while(k)
-    {
-        d=k%10;
-        s=s*10+d;
-        k/=10;
-    }
-    if(s==r)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
-int pr(int k)
-{
-    int r,i=0;
-    for(r=1;r<=k;r++)
-    {
-        if(k%r==0)
-        {
-            i++;
-        }
-    }
-    if(i==2)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
 int main()
 {
-    int v,k;
-    scanf("%d",&v);
-    for(k=v+1;;k++)
+    int n,c,r,m,i;
+    scanf("%d",&n);
+    start:
+    n++;
+    m=n;
+    r=0;
+    while(m>0)
     {
-        if(npal(k) && pr(k))
+        r=r*10+m%10;
+        m/=10;
+    }
+    if(r==n)
+    {
+        c=0;
+        for(i=1;i<=n;i++)
         {
-            printf("%d",k);
-            break;
+            if(n%i==0)
+            {
+                c++;
+            }
         }
+        if(c==2)
+        {
+            printf("%d",n);
+        }
+        else
+        {
+            goto start;
+        }
+    }
+    else
+    {
+        goto start;
     }
 }

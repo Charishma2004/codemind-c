@@ -1,7 +1,9 @@
- # include <stdio.h>
-int main()
+#include<stdio.h>
+#include<math.h>
+main()
 {
-    int p,t,r;
-    scanf("%d%d%d",&p,&t,&r);
-    printf("%d",p*t*r/100);
+    int p,r,t,si;
+    scanf("%d%d%d%d",&p,&r,&t);
+    si=(p*r*t)/100;
+    printf("%d",si);
 }

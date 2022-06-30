@@ -1,34 +1,52 @@
 #include<stdio.h>
-int main()
+int counting(int n,int *b,int len)
 {
-    int n,arr[100],i,m=0,c,j;
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
+    int m=0;
+    for(m=0;m<len;m++)
     {
-        scanf("%d",&arr[i]);
-    }
-    for(i=0;i<n;i++)
-    {
-        c=1;
-        if(arr[i]!=-1)
+        if(b[m]==n)
         {
-            for(j=0;j<n;j++)
-            {
-                if(arr[i]==arr[j]&&i!=j)
-                {
-                    c++;
-                    arr[j]=-1;
-                }
-            }
-            if(c==arr[i])
-            {
-                printf("%d ",arr[i]);
-                m++;
-            }
+            return 0;
         }
     }
-    if(m==0)
+    return 1;
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int a[n],i,flag=0;
+    for(i=0;i<n;i++)
     {
-        printf("-1");
+        scanf("%d",&a[i]);
     }
+    int j=0,k=0,b[n];
+    for(i=0;i<n;i++)
+    {
+        int count=1;
+        //int flag=0;
+        
+        if(counting(a[i],b,n))
+        {
+        b[k]=a[i];
+        k++;
+        for(j=i+1;j<n;j++)
+        
+        {
+            if(a[i]==a[j])
+            {
+                count++;
+            }
+        }
+        if(count==a[i])
+        {
+             printf("%d ",a[i]);
+            flag=1;
+        }
+        }
+    }
+    if(flag==0)
+    printf("-1 ");
+    return 0;
+
 }

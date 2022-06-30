@@ -1,54 +1,46 @@
-#include<stdio.h>
-int pal(int num)
+#include<bits/stdc++.h>
+bool palindrome(int n)
 {
-    int rev=0,temp=num,r;
-    while(temp>0)
+    int r,sum=0,temp;
+    temp=n;
+    while(n>0)
     {
-        r=temp%10;
-        rev=(rev*10)+r;
-        temp=temp/10;
+        r=n%10;
+        sum=sum*10+r;
+        n=n/10;
     }
-    if(rev==num)
-    {
-        return 1;
-    }
-    return 0;
+    if(sum==temp)
+    return true;
+    else
+    return false;
 }
 int main()
 {
-    int a;
-    scanf("%d",&a);
-    int diff1=0,diff2=0,i,j;
-    int pal1,pal2;
-    for(i=a+1;i<=10000;i++)
+    int n,d1,d2,i;
+    std::cin>>n;
+    for(i=n+1;;i++)
     {
-        if(pal(i)==1)
+        bool found=palindrome(i);
+        if(found)
         {
-            diff1=i-a;
-            pal1=i;
+            d1=i-n;
             break;
         }
     }
-    for(i=a-1;i>0;i--)
+    for(i=n-1;;i--)
     {
-        if(pal(i)==1)
+        bool found=palindrome(i);
+        if(found)
         {
-            diff2=a-i;
-            pal2=i;
+            d2=n-i;
             break;
         }
     }
-    if(diff1>diff2)
-    {
-        printf("%d",pal2);
-    }
-    else if(diff2==diff1)
-    {
-        printf("%d %d",pal2,pal1);
-    }
+    if(d1==d2)
+    std::cout<<n-d1<<" "<<n+d2;
+    else if(d1>d2)
+    std::cout<<n-d2;
     else
-    {
-        printf("%d",pal1);
-    }
+    std::cout<<n+d1;
     return 0;
 }

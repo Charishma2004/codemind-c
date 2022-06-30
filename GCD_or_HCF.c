@@ -1,16 +1,21 @@
 #include<stdio.h>
+int findgcd(int a,int b)
+{
+    int res;
+    while(b)
+    {
+        int res;
+        res=a%b;
+        a=b;
+        b=res;
+    }
+    return a;
+}
 int main()
 {
-    int a,b,t,i=0;
+    int a,b,gcd;
     scanf("%d%d",&a,&b);
-    for(t=2;t<=a&&t<=b;t++)
-    {
-        if(a%t==0&&b%t==0)
-        {i=t;}
-    }
-    if(i!=0)
-    printf("%d",i);
-    else
-    printf("1");
+    gcd=findgcd(a,b);
+    printf("%d",gcd);
     return 0;
 }

@@ -1,31 +1,27 @@
 #include<stdio.h>
-int linear_search(int*arr,int n,int se)
-{
-    int i;
-    for(i=0;i<n;i++)
-    {
-        if(arr[i]==se)
-        {
-            return 1;
-        }
-    }
-    return 0;
-}
 int main()
 {
-    int n,arr[100],i,se;
+    int n,a[100],i,m,found=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
-    scanf("%d",&se);
-    if(linear_search(arr,n,se))
+    scanf("%d",&m);
+    for(i=0;i<n;i++)
     {
-        printf("True");
+        if(m==a[i])
+        {
+            found++;
+            break;
+        }
+    }
+    if(found==0)
+    {
+        printf("False");
     }
     else
     {
-        printf("False");
+        printf("True");
     }
 }

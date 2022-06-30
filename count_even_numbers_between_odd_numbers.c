@@ -1,22 +1,18 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[100],i,j,c=0;
+    int r=0,v[2004],k,n;
     scanf("%d",&n);
-    for(i=0;i<n;i++)
+    for(k=0;k<n;k++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&v[k]);
     }
-    for(i=1;i<n-1;i++)
+    for(k=0;k<n-2;k++)
     {
-        c=0;
-        for(j=1;j<n-1;j++)
+        if(v[k]%2!=0 && v[k+1]%2==0 && v[k+2]%2!=0)
         {
-            if(arr[j]%2==0 &&arr[j+1]%2 &&arr[j-1]%2)
-            {
-                c++;
-            }
+            r++;
         }
     }
-    printf("%d",c);
+    printf("%d",r);
 }

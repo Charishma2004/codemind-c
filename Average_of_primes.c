@@ -1,29 +1,29 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[100],i,j,c=0,m=0;
-    float avg,s=0;
+    int n,i,a[100],j,m=0,s=0,k=0;
+    float av;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
     for(i=0;i<n;i++)
     {
-        c=0;
-        for(j=1;j<=arr[i];j++)
+        s=0;
+        for(j=1;j<a[i];j++)
         {
-            if(arr[i]%j==0)
-            {
-                c++;
-            }
+           if(a[i]%j==0)
+           {
+               s++;
+           }
         }
-        if(c==2)
+        if(s==1)
         {
-            s=s+arr[i];
-            m++;
+            m=m+a[i];
+            k++;
         }
     }
-    avg=s/m;
-    printf("%.2f",avg);
+    av=(float)m/k;
+    printf("%.2f",av);
 }

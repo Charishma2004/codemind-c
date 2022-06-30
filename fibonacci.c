@@ -1,16 +1,16 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,t1=0,t2=1;
-    int nextterm=t1+t2;
+    int n,i,a[50];
     scanf("%d",&n);
-    printf("%d %d",t1,t2);
-    for(i=3;i<=n;i++)
+    a[0]=0;
+    a[1]=1;
+    for(i=1;i<n+1;i++)
     {
-        printf(" %d",nextterm);
-        t1=t2;
-        t2=nextterm;
-        nextterm=t1+t2;
+        a[i+1]=a[i]+a[i-1];
     }
-    return 0;
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
 }

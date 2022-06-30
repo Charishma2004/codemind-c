@@ -1,23 +1,19 @@
 #include<stdio.h>
 int main()
 {
-    int arr[100],n,i,a,b,v=0;
+    int a,b,arr[10000],i,n,sum=0,c=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
-    {
-        scanf("%d",&arr[i]);
-    }
-    scanf("%d %d",&a,&b);
+    scanf("%d",&arr[i]);
+    scanf("%d%d",&a,&b);
     for(i=0;i<n;i++)
     {
-        if(arr[i]<a || arr[i]>b)
+        if(arr[i]<a||arr[i]>b)
         {
+            c++;
             printf("%d ",arr[i]);
-            v++;
         }
     }
-    if(v==0)
-    {
-        printf("-1");
-    }
+    if(c==0)
+    printf("-1");
 }

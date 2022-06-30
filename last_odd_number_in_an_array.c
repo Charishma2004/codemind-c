@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[100],i,r;
+    int arr[100],n,i,odd;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
@@ -9,10 +9,10 @@ int main()
     }
     for(i=0;i<n;i++)
     {
-        if(arr[i]%2==1)
+        if(arr[i]%2!=0)
         {
-            r=arr[i];
+            odd = arr[i];
         }
     }
-    printf("%d",r);
+    printf("%d",odd);
 }
